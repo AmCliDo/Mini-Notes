@@ -22,12 +22,10 @@ Stack: **MongoDB + Express + React + Node.js**.
    cd ..
    ```
 
-3. Beispiel-Umgebungsdateien kopieren:
+3. Umgebungsdateien erstellen:
 
-   ```bash
-   cp server/.env.example server/.env
-   cp client/.env.local.example client/.env.local
-   ```
+   server/.env
+   client/.env.local
 
 4. `.env` & `.env.local` mit deinen Werten ausfüllen:
 
