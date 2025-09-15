@@ -38,7 +38,7 @@ export default function App() {
         <h1>MiniNotes</h1>
         <div className="filters">
           <input
-            placeholder="Suche..."
+            placeholder="Search..."
             value={filter.q}
             onChange={(e) => setFilter({ q: e.target.value })}
           />
@@ -56,9 +56,9 @@ export default function App() {
             value={filter.pinned}
             onChange={(e) => setFilter({ pinned: e.target.value })}
           >
-            <option value="">Alle</option>
-            <option value="true">Gepinnt</option>
-            <option value="false">Ungepinnt</option>
+            <option value="">All</option>
+            <option value="true">pinned</option>
+            <option value="false">unpinned</option>
           </select>
         </div>
       </header>
@@ -83,7 +83,7 @@ export default function App() {
           <button type="submit">Create note</button>
         </div>
         <textarea
-          placeholder="Inhalt (optional)"
+          placeholder="Content (optional)"
           value={form.content}
           onChange={(e) => setForm({ ...form, content: e.target.value })}
         />
@@ -148,7 +148,7 @@ export default function App() {
                 </div>
               </form>
             ) : (
-              <p>{n.content || <em>(kein Inhalt)</em>}</p>
+              <p>{n.content || <em>(No content)</em>}</p>
             )}
           </article>
         ))}
