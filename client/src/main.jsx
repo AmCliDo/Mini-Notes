@@ -7,3 +7,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
+//startpunkt von React-APP
+//React rendert APP, alles was zurück kommt landet im DOM

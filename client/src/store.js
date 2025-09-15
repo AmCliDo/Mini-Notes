@@ -1,3 +1,4 @@
+//Importiert die API-Funktionen die mit dem Backend sprechen (GET,Post,Patch,Del)
 import { create } from "zustand";
 import { listNotes, createNote, updateNote, deleteNote } from "./api";
 
@@ -6,6 +7,7 @@ export const useNotes = create((set, get) => ({
   loading: false,
   filter: { q: "", category: "", pinned: "" },
 
+  //Notizen zum Server laden
   fetch: async () => {
     set({ loading: true });
     const { q, category, pinned } = get().filter;
@@ -16,7 +18,7 @@ export const useNotes = create((set, get) => ({
     });
     set({ notes, loading: false });
   },
-
+//Notizen an API's senden
   create: async (data) => {
     await createNote(data);
     await get().fetch();

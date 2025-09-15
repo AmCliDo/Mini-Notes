@@ -1,3 +1,4 @@
+//definiert wir eine Notiz in MongoDB aufgebaut ist
 import mongoose from "mongoose";
 
 const NoteSchema = new mongoose.Schema(
