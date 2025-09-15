@@ -153,7 +153,7 @@ export default function App() {
           </article>
         ))}
       </div>
-      <footer>© MiniNotes by Jasmine</footer>
+      <footer>© MiniNotes</footer>
     </div>
   );
 }
