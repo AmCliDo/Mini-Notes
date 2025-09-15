@@ -94,7 +94,14 @@ export default function App() {
                 <button onClick={() => update(n._id, { pinned: !n.pinned })}>
                   {n.pinned ? "Unpin" : "Pin"}
                 </button>
-                <button onClick={() => { setEditingId(n._id); setEditForm({ title: n.title, content: n.content || "" }); }}>Edit</button>
+                <button
+                  onClick={() => {
+                    setEditingId(n._id);
+                    setEditForm({ title: n.title, content: n.content || "" });
+                  }}
+                >
+                  Edit
+                </button>
                 <button onClick={() => remove(n._id)}>Löschen</button>
               </div>
             </div>
@@ -102,21 +109,37 @@ export default function App() {
               {n.category} · {new Date(n.updatedAt).toLocaleString()}
             </p>
             {editingId === n._id ? (
-              <form className="edit-form" onSubmit={async (e) => { e.preventDefault(); await update(n._id, { title: editForm.title, content: editForm.content }); setEditingId(null); }}>
+              <form
+                className="edit-form"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  await update(n._id, {
+                    title: editForm.title,
+                    content: editForm.content,
+                  });
+                  setEditingId(null);
+                }}
+              >
                 <input
                   value={editForm.title}
-                  onChange={(e) => setEditForm((f) => ({ ...f, title: e.target.value }))}
+                  onChange={(e) =>
+                    setEditForm((f) => ({ ...f, title: e.target.value }))
+                  }
                   placeholder="Titel"
                 />
                 <textarea
                   value={editForm.content}
-                  onChange={(e) => setEditForm((f) => ({ ...f, content: e.target.value }))}
+                  onChange={(e) =>
+                    setEditForm((f) => ({ ...f, content: e.target.value }))
+                  }
                   placeholder="Inhalt"
                   rows={4}
                 />
                 <div className="actions">
                   <button type="submit">Save</button>
-                  <button type="button" onClick={() => setEditingId(null)}>Cancel</button>
+                  <button type="button" onClick={() => setEditingId(null)}>
+                    Cancel
+                  </button>
                 </div>
               </form>
             ) : (
@@ -125,7 +148,7 @@ export default function App() {
           </article>
         ))}
       </div>
-      <footer>© MiniNotes</footer>
+      <footer>© MiniNotes by Jasmine</footer>
     </div>
   );
 }
