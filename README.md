@@ -75,7 +75,7 @@ npm run dev
 
 ---
 
-## 📖 Bedienungsanleitung
+## Bedienungsanleitung
 
 - **Neue Notiz anlegen**: Titel eingeben, Kategorie wählen, optional Inhalt hinzufügen → „Notiz anlegen“ klicken.
 - **Notiz bearbeiten**: Bei einer bestehenden Notiz auf „Edit“ klicken → Titel/Inhalt ändern → „Save“.
