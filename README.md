@@ -1,4 +1,4 @@
-# 📝 MiniNotes (MERN)
+# MiniNotes (MERN)
 
 Einfaches Notiz-Tool mit Kategorien & Pin.  
 Stack: **MongoDB + Express + React + Node.js**.
@@ -8,12 +8,14 @@ Stack: **MongoDB + Express + React + Node.js**.
 ## Installation
 
 1. Repository klonen:
+
    ```bash
    git clone https://github.com/AmCliDo/Mini-Notes.git
    cd Mini-Notes
    ```
 
 2. Dependencies installieren (**Server & Client**):
+
    ```bash
    cd server && npm install
    cd ../client && npm install
@@ -21,6 +23,7 @@ Stack: **MongoDB + Express + React + Node.js**.
    ```
 
 3. Beispiel-Umgebungsdateien kopieren:
+
    ```bash
    cp server/.env.example server/.env
    cp client/.env.local.example client/.env.local
@@ -29,6 +32,7 @@ Stack: **MongoDB + Express + React + Node.js**.
 4. `.env` & `.env.local` mit deinen Werten ausfüllen:
 
    **server/.env**
+
    ```env
    MONGODB_URI=mongodb+srv://USER:PASS@cluster.mongodb.net/mininotes
    PORT=4000
@@ -36,6 +40,7 @@ Stack: **MongoDB + Express + React + Node.js**.
    ```
 
    **client/.env.local**
+
    ```env
    VITE_API_URL=http://localhost:4000
    ```
@@ -45,19 +50,24 @@ Stack: **MongoDB + Express + React + Node.js**.
 ## Start
 
 ### Alles zusammen starten (empfohlen)
+
 Im Projekt-Root:
+
 ```bash
 npm run dev
 ```
---> Startet **Backend** (Port 4000) und **Frontend** (Port 5173) gleichzeitig.  
+
+--> Startet **Backend** (Port 4000) und **Frontend** (Port 5173) gleichzeitig.
 
 ### Backend einzeln
+
 ```bash
 cd server
 npm run dev
 ```
 
 ### Frontend einzeln
+
 ```bash
 cd client
 npm run dev
@@ -67,23 +77,23 @@ npm run dev
 
 ## API Endpoints
 
-- `GET /api/notes?q=&category=&pinned=` → Liste mit optionalen Filtern  
-- `POST /api/notes` → Neue Notiz erstellen  
+- `GET /api/notes?q=&category=&pinned=` → Liste mit optionalen Filtern
+- `POST /api/notes` → Neue Notiz erstellen
   ```json
   { "title": "Test", "content": "Inhalt", "category": "work", "pinned": false }
   ```
-- `GET /api/notes/:id` → Einzelne Notiz lesen  
-- `PATCH /api/notes/:id` → Teilweise aktualisieren  
-- `PUT /api/notes/:id` → Komplette Aktualisierung  
-- `DELETE /api/notes/:id` → Notiz löschen  
+- `GET /api/notes/:id` → Einzelne Notiz lesen
+- `PATCH /api/notes/:id` → Teilweise aktualisieren
+- `PUT /api/notes/:id` → Komplette Aktualisierung
+- `DELETE /api/notes/:id` → Notiz löschen
 
 ---
 
 ## Deployment
 
-- **Backend**: Render  
-- **Frontend**: Vercel 
-- **Datenbank**: MongoDB Atlas  
+- **Backend**: Render
+- **Frontend**: Vercel
+- **Datenbank**: MongoDB Atlas
 
 ---
 
