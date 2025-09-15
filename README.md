@@ -106,7 +106,3 @@ npm run dev
 - **Datenbank**: MongoDB Atlas
 
 ---
-
-## Autor
-
-- Jasmine Bossard
