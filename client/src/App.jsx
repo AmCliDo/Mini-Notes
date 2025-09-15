@@ -46,7 +46,7 @@ export default function App() {
             value={filter.category}
             onChange={(e) => setFilter({ category: e.target.value })}
           >
-            <option value="">Alle Kategorien</option>
+            <option value="">All categories </option>
             <option value="private">Private</option>
             <option value="work">Work</option>
             <option value="ideas">Ideas</option>
@@ -80,7 +80,7 @@ export default function App() {
             <option value="work">Work</option>
             <option value="ideas">Ideas</option>
           </select>
-          <button type="submit">Notiz anlegen</button>
+          <button type="submit">Create note</button>
         </div>
         <textarea
           placeholder="Inhalt (optional)"
