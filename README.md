@@ -75,6 +75,16 @@ npm run dev
 
 ---
 
+## 📖 Bedienungsanleitung
+
+- **Neue Notiz anlegen**: Titel eingeben, Kategorie wählen, optional Inhalt hinzufügen → „Notiz anlegen“ klicken.
+- **Notiz bearbeiten**: Bei einer bestehenden Notiz auf „Edit“ klicken → Titel/Inhalt ändern → „Save“.
+- **Notiz pinnen**: „Pin“-Button setzt eine Notiz ganz oben.
+- **Notiz löschen**: Mit „Löschen“-Button entfernen.
+- **Filter nutzen**: Oben nach Text suchen, nach Kategorie filtern oder nur gepinnte Notizen anzeigen.
+
+---
+
 ## API Endpoints
 
 - `GET /api/notes?q=&category=&pinned=` → Liste mit optionalen Filtern
@@ -91,8 +101,8 @@ npm run dev
 
 ## Deployment
 
-- **Backend**: Render
-- **Frontend**: Vercel
+- **Backend**: [Render](https://render.com)
+- **Frontend**: [Vercel](https://vercel.com)
 - **Datenbank**: MongoDB Atlas
 
 ---
