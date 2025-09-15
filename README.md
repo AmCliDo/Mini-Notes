@@ -24,8 +24,10 @@ Stack: **MongoDB + Express + React + Node.js**.
 
 3. Umgebungsdateien erstellen:
 
+   ```bash
    server/.env
    client/.env.local
+   ```
 
 4. `.env` & `.env.local` mit deinen Werten ausfüllen:
 
