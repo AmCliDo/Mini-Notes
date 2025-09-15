@@ -1,0 +1,166 @@
+:root {
+  --bg: #0b0c0f;
+  --card: #151821;
+  --text: #e6e6e6;
+  --muted: #9aa0a6;
+  --primary: #6ea8fe;
+}
+
+* {
+  /* * wendet den Style auf alle Elemente an */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, Segoe UI, Roboto, Arial;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr 160px 160px;
+  gap: 8px;
+}
+
+.card {
+  display: flex;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0; /* wichtig in Grids/Flex */
+}
+
+.card p,
+.card h3 {
+  overflow-wrap: anywhere; /* bricht lange Wörter/URLs, zeilenumbruch */
+  word-break: break-word;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+input,
+select,
+textarea,
+button {
+  border-radius: 8px;
+  border: 1px solid #2b2f3a;
+  background: #0f1116;
+  color: var(--text);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+select {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%; /* verhindert „über den Hintergrund hinaus“ */
+  min-height: 200px; /* Start-Höhe */
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  /* Jede Karte min. 260px breit, sonst 1fr – passt sich automatisch an */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.pinned {
+  outline: 2px solid var(--primary);
+}
+
+footer {
+  text-align: center;
+  opacity: 0.6;
+  margin: 24px 0;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .row {
+    flex-direction: column;
+  }
+}
+
+
+/* Edit form inside note card */
+.edit-form input, .edit-form textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #2a2f3a;
+  background: #11141b;
+  color: var(--text);
+}
+.edit-form .actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.edit-form button[type="submit"] {
+  background: var(--primary);
+  color: #0b0c0f;
+}
