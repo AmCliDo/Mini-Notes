@@ -5,6 +5,7 @@ import "./styles.css";
 export default function App() {
   const { notes, loading, fetch, create, update, remove, setFilter, filter } =
     useNotes();
+  //startet Formular mit Leeren Titel und Content, Kategorie private
   const [form, setForm] = useState({
     title: "",
     content: "",
@@ -14,6 +15,8 @@ export default function App() {
   const [editingId, setEditingId] = useState(null);
   const [editForm, setEditForm] = useState({ title: "", content: "" });
 
+  //aktualisiert mit Datenbank wenn neu gestartet oder aktualisiert wird
+  //aktualisiert wernn neue Filter gesetzt werden
   useEffect(() => {
     fetch();
   }, []);
@@ -21,6 +24,7 @@ export default function App() {
     fetch();
   }, [filter.q, filter.category, filter.pinned]);
 
+  //erstellt neue Notiz, setzt formular zurück
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!form.title.trim()) return;
@@ -47,6 +51,7 @@ export default function App() {
             <option value="work">Work</option>
             <option value="ideas">Ideas</option>
           </select>
+
           <select
             value={filter.pinned}
             onChange={(e) => setFilter({ pinned: e.target.value })}
@@ -102,7 +107,7 @@ export default function App() {
                 >
                   Edit
                 </button>
-                <button onClick={() => remove(n._id)}>Löschen</button>
+                <button onClick={() => remove(n._id)}>Delete</button>
               </div>
             </div>
             <p className="muted">

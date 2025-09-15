@@ -1,4 +1,6 @@
 const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
+//GET bzw. READ (ohne "Method" standardmässig GET)
 export const listNotes = async (params = {}) => {
   const url = new URL(API + "/api/notes");
   Object.entries(params).forEach(
@@ -7,6 +9,8 @@ export const listNotes = async (params = {}) => {
   const r = await fetch(url);
   return r.json();
 };
+
+//POST bzw. CREATE
 export const createNote = async (data) => {
   const r = await fetch(API + "/api/notes", {
     method: "POST",
@@ -15,6 +19,8 @@ export const createNote = async (data) => {
   });
   return r.json();
 };
+
+//PATCH bzw UPDATE
 export const updateNote = async (id, data) => {
   const r = await fetch(API + `/api/notes/${id}`, {
     method: "PATCH",
@@ -23,6 +29,8 @@ export const updateNote = async (id, data) => {
   });
   return r.json();
 };
+
+// DELETE
 export const deleteNote = async (id) => {
   const r = await fetch(API + `/api/notes/${id}`, { method: "DELETE" });
   return r.json();
