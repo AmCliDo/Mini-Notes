@@ -14,22 +14,14 @@ Stack: **MongoDB + Express + React + Node.js**.
    cd Mini-Notes
    ```
 
-2. Dependencies installieren (**Server & Client**):
-
-   ```bash
-   cd server && npm install
-   cd ../client && npm install
-   cd ..
-   ```
-
-3. Umgebungsdateien erstellen:
+2. Umgebungsdateien erstellen:
 
    ```bash
    server/.env
    client/.env.local
    ```
 
-4. `.env` & `.env.local` mit deinen Werten ausfüllen:
+3. `.env` & `.env.local` mit deinen Werten ausfüllen:
 
    **server/.env**
 
@@ -45,6 +37,20 @@ Stack: **MongoDB + Express + React + Node.js**.
    VITE_API_URL=http://localhost:4000
    ```
 
+4. Dependencies installieren (**Server & Client**):
+
+   ```bash
+   cd server
+   npm install
+   cd ..
+   ```
+
+   ```bash
+   cd client
+   npm install
+   cd ..
+   ```
+
 ---
 
 ## Start
@@ -54,6 +60,7 @@ Stack: **MongoDB + Express + React + Node.js**.
 Im Projekt-Root:
 
 ```bash
+npm install
 npm run dev
 ```
 
